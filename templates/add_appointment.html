@@ -1,0 +1,64 @@
+{% extends 'nav.html' %}
+{% block header %}
+    <h1>{% block title %}Make Appointment{% endblock %}</h1>
+{% endblock %}
+<!-- contact section starts  -->
+{% block content %}
+<section class="contact" id="contact">
+    <h1 class="heading">Make Appointment</h1>
+    <form action="" method="POST" enctype='multipart/form-data'>
+        {% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+               <p class="message">{{ message }}</p>
+               {% endfor %}
+         {% endif %}
+      {% endwith %}
+       <span>Your Name :</span>
+       <input type="text" name="name" placeholder="Enter Your Name" class="box" required>
+       <span>Your Email :</span>
+       <input type="email" name="email" placeholder="Enter Your Email" class="box" required>
+       <span>Your Number :</span>
+       <input type="number" name="number" placeholder="Enter Your Number" class="box" required>
+       <span>Appointment Date :</span>
+       <input type="datetime-local" name="date" class="box" required>
+        <span>Photo of Condition :</span>
+       <input type="file" name="mypict" class="box" id="picturelabel" required>
+       <input type="submit" value="Make Appointment" name="submit" class="link-btn">
+    </form>  
+</section>
+<section class="footer">
+
+    <div class="box-container container">
+  
+        <div class="box">
+            <i class="fas fa-phone"></i>
+            <h3>Phone Number</h3>
+            <p>+201-009-007-842</p>
+            <p>+201-019-987-321</p>
+        </div>
+  
+        <div class="box">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Our Address</h3>
+            <p>Cairo, Egypt - 400104</p>
+        </div>
+  
+        <div class="box">
+            <i class="fas fa-clock"></i>
+            <h3>Opening Hours</h3>
+            <p>00:07am to 10:00pm</p>
+        </div>
+  
+        <div class="box">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Address</h3>
+            <p>mostafasamysfsf@gmail.com</p>
+            <p>bibovino9@gmail.com</p>
+        </div>
+  
+    </div>
+    <div class="credit"><span>Edited By Mostafa Samy &#174;</span></div>
+  </section>
+{% endblock %}
+<!-- contact section ends -->

@@ -1,0 +1,33 @@
+{% extends 'search_nav.html' %}
+<h1>{% block title %}Admin{% endblock %}</h1>
+{% block content %}
+<h1 align="center" style="margin-top:60px;">Dentist Page</h1>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Date</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    {% for row in data %}
+    <tbody>
+        <tr>
+            <td><span style="text-decoration: double;color:aqua;">{{row ['id']}}</span></td>
+            <td><span style="text-decoration: double;color:aqua;">{{row ['name']}}</span></td>
+            <td><span style="text-decoration: double;color:aqua;">{{row ['email']}}</span></td>
+            <td><span style="text-decoration: double;color:aqua;">{{row ['number']}}</span></td>
+            <td><span style="text-decoration: double;color:aqua;">{{row ['date']}}</span></td>
+            <td><span style="text-decoration: double;color:aqua;">{{row ['picture']}}</span></td>
+            <td><a href="{{url_for('update_appointment',id=row['id'])}}" class="btn btn-outline-success">Edit</a></td>
+            <td><a href="{{url_for('delete_entry',id=row['id'])}}" class="btn btn-outline-danger">Delete</a>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock %}

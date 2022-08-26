@@ -1,0 +1,20 @@
+{% extends 'search_nav.html' %}
+<h1>{% block title %}Admin Cards{% endblock %}</h1>
+{% block content %}
+<h1 align="center" style="margin-top:60px;">Dentist Cards Page</h1>
+<div class="row">
+{% for row in data %}
+<div class="col-3">
+    <div class="card" style="width: 18rem;margin-top:20px;">
+        <img src="{{url_for('static',filename='/uploads/'+row['picture'])}}" class="card-img-top" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{row ['name']}}</h5>
+          <p class="card-text">Patient's email is <span style="color:aqua;">{{row['email']}}</span>, Patient's Phone Number is <span style="color:violet;">{{row['number']}}</span> and Patient's Check Date is <span style="color:green;">{{row['date']}}</span></p>
+          <a href="{{url_for('update_appointment',id=row['id'])}}" class="btn btn-outline-success">Edit</a>
+          <a href="{{url_for('delete_entry',id=row['id'])}}" class="btn btn-outline-danger">Delete</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

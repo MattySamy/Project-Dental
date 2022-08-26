@@ -1,0 +1,25 @@
+{% extends 'nav.html' %}
+{% block header %}
+    <h1>{% block title %}Delete Appointment{% endblock %}</h1>
+{% endblock %}
+<!-- contact section starts  -->
+{% block content %}
+<section class="contact" id="contact">
+    <h1 class="heading">Delete Appointment</h1>
+    <form action="" method="POST">
+       <span>Your ID :</span>
+       <input type="text" name="id" placeholder="Enter Your Name" value="{{row[0]}}" class="box" disabled>
+       <span>Your name :</span>
+       <input type="text" name="name" placeholder="Enter Your Name" value="{{row[1]}}" class="box" disabled>
+       <span>Your email :</span>
+       <input type="email" name="email" placeholder="Enter Your Email" value="{{row[2]}}" class="box" disabled>
+       <span>Your number :</span>
+       <input type="number" name="number" placeholder="Enter Your Number" value="{{row[3]}}" class="box" disabled>
+       <span>Appointment Date :</span>
+       <input type="datetime-local" name="date" class="box" value="{{row[4]}}" disabled>
+       <span>Photo of Condition :</span>
+       <input type="file" name="mypict" class="box" id="picturelabel" disabled>
+       <input type="submit" value="Delete" name="submit" class="danger-btn">
+    </form>  
+</section>
+{% endblock %}

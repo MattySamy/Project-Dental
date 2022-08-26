@@ -1,0 +1,51 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %} DentalCare {% endblock %}</title>
+
+    <link rel="icon" href="{{url_for('static',filename='tooth.svg')}}" type="image/x-icon">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- bootstrap cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+<!-- header section starts  -->
+
+<header class="header fixed-top">
+
+    <div class="container">
+
+        <div class="row align-items-center justify-content-between">
+
+            <a href="{{url_for('admin')}}" class="logo">Dental<span>Care</span></a>
+
+            <nav class="nav">
+                <a href="{{url_for('admin')}}">Home</a>
+                <a href="{{url_for('card')}}" style="margin-right:10px;">Card View</a>
+                <a href="{{url_for('info')}}">Info</a>
+            </nav>
+            <form method="POST" action="{{url_for('search_appointment')}}" class="d-flex">
+                <input class="form-control me-2" name="name" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-warning" type="submit">Search</button>
+            </form>
+            <button type="button" method="get" onclick="window.location.href='{{ url_for( 'filter_app') }}';" name="username" class="btn btn-outline-info">Filter By Date</button>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </div>
+</header>
+<script src="{{url_for('static', filename='script.js')}}"></script>
+<br><br><br>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+<!-- header section ends -->

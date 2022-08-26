@@ -1,0 +1,26 @@
+{% extends 'nav.html' %}
+{% block header %}
+    <h1>{% block title %}Update Appointment{% endblock %}</h1>
+{% endblock %}
+<!-- contact section starts  -->
+{% block content %}
+<section class="contact" id="contact">
+    <h1 class="heading">Update Appointment</h1>
+    <form action="" method="POST">
+       <span>Your ID :</span>
+       <input type="text" name="id" placeholder="Enter Your Name" value="{{row[0]}}" class="box" disabled>
+       <span>Your name :</span>
+       <input type="text" name="name" placeholder="Enter Your Name" value="{{row[1]}}" class="box" required>
+       <span>Your email :</span>
+       <input type="email" name="email" placeholder="Enter Your Email" value="{{row[2]}}" class="box" required>
+       <span>Your number :</span>
+       <input type="number" name="number" placeholder="Enter Your Number" value="{{row[3]}}" class="box" required>
+       <span>Appointment Date :</span>
+       <input type="datetime-local" name="date" class="box" value="{{row[4]}}" required>
+       <span>Photo of Condition :</span>
+       <button type="button" name="mypict" id="picturelabel" value="" href="{{url_for('upload_file')}}" class="box btn btn-outline-secondary">Upload Photo</button>
+      <input type="submit" value="Update Appointment" name="submit" class="link-btn">
+    </form>  
+</section>
+{% endblock %}
+<!-- contact section ends -->
