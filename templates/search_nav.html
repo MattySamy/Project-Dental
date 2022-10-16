@@ -32,13 +32,13 @@
             <nav class="nav">
                 <a href="{{url_for('admin')}}">Home</a>
                 <a href="{{url_for('card')}}" style="margin-right:10px;">Card View</a>
-                <a href="{{url_for('info')}}">Info</a>
+                <a href="{{url_for('info')}}" style="margin-right:10px;">Info</a>
             </nav>
             <form method="POST" action="{{url_for('search_appointment')}}" class="d-flex">
                 <input class="form-control me-2" name="name" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-warning" type="submit">Search</button>
             </form>
-            <button type="button" method="get" onclick="window.location.href='{{ url_for( 'filter_app') }}';" name="username" class="btn btn-outline-info">Filter By Date</button>
+            <button type="button" method="get" onclick="window.location.href='{{ url_for( 'filter_app') }}';" name="name" class="btn btn-outline-info">Filter By Date</button>
             <div id="menu-btn" class="fas fa-bars"></div>
         </div>
     </div>

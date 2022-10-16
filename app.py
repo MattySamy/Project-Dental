@@ -52,7 +52,6 @@ def upload_file():
 
 @app.route('/add_app' , methods=['POST','GET'])
 def add_app():
-    error=None
     if request.method == "POST":
        name = request.form ['name']
        email = request.form['email']
@@ -68,7 +67,7 @@ def add_app():
        conn.close()
        flash('The Appointment has been submitted Successfully !')
        #return redirect(url_for('admin', date=name ,password = email , id = number, date = date))
-    return render_template("add_appointment.html",message = message)
+    return render_template("add_appointment.html")
 
 @app.route('/update/<int:id>',methods=['GET','POST'])
 def update_appointment(id):
@@ -135,10 +134,9 @@ def filter_app():
     return render_template('filter_appointment.html',data = data)
 
 @app.route('/info')
-@app.route('/admin/<name>/<email>/<number>/<date>')
+@app.route('/info/<name>/<email>/<number>/<date>')
 def info(name = '',email='',number='',date=''):
     conn = get_db().cursor()
     conn.execute("select * from contact_form order by date;")
     data = conn.fetchall()
     return render_template("info.html" ,name = name,email=email,number=number,date=date,data=data)
-    

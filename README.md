@@ -8,6 +8,8 @@ Have any problem? Don't hesitate to connect... <br>
 ## Summary
 Hello friends, This is my first DentalCare project with Python-Flask. This is free. Anybody can use and moderate this project.
 Edited and Developed By Mostafa Abdelhamid Abdelmonem Abdo.
+Team Members : Mostafa Abdelhamid Abdelmonem Abdo.
+Project Discription : Make Appointments For Patients at Opening Time and Dentist can filter , search and delete appointments to contact with patients who made apointment.
 
 ## Platform Used
 ### Front-End
